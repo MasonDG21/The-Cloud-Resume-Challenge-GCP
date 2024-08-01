@@ -101,11 +101,12 @@ footer {
 }
 
 footer a {
-    color: var(--accent-color);
-    text-decoration: none;
+    color: #FFD700;
+    text-decoration: underline;
     font-weight: bold;
 }
 
 footer a:hover {
+    color: #DAA520;
     text-decoration: underline;
 }
