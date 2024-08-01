@@ -87,10 +87,50 @@ ul {
     padding-left: 20px;
 }
 
+.about-section {
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    padding: 40px 20px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.about-section .avatar {
+    border-radius: 50%;
+    width: 150px;
+    height:150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.about-section blockquote {
+    font-style: italic;
+    color: #777;
+    margin-top: 20px;
+}
+
 .skills-list {
     list-style-type: none;
     columns: 2;
     column-gap: 40px;
+}
+
+.contact-section {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info img {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 .grid-container {
