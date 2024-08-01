@@ -67,34 +67,17 @@ The CSS file should:
 - Use appropriate color scheme and typography for readability
 
 ## 6. Detailed Design
-
-### 6.1 HTML Implementation
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Resume</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Professional Title</p>
-    </header>
-    <main>
-        <!-- Add sections for experience, education, skills, etc. -->
-    </main>
-    <footer>
-        <p>© 2024 Your Name. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-```
+### Design Overview
+The frontend of the application is designed with modern CSS techniques to ensure a responsive and user-friendly interface. The following technologies and methodologies are used:
 
 ### 6.2 CSS Implementation
-Create a separate `styles.css` file with appropriate styling rules.
+`styles.css` - The frontend uses modern CSS techniques to create a responsive and interactive user interface.
+
+The technologies and methodologies used are:
+- **CSS Grid**: Used for the overall layout of the page, providing a flexible and efficient way to arrange content.
+- **Flexbox**: Employed for navigation and other components that require alignment and distribution of space.
+- **Custom Properties (CSS Variables)**: Used for theme colors to ensure consistency and easy theming across the application.
+- **Transitions**: Applied to interactive elements to enhance user experience with smooth animations.
 
 ### 6.3 Deployment Process
 1. Create a Google Cloud Storage bucket
