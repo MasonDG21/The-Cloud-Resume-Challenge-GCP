@@ -1,26 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mason Galyon's professional resume to showcase skills and experience in Cloud Engineering">
-    <title>Mason Galyon | Cloud Engineer Resume</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DevOps Resume</title>
+    <link rel="stylesheet" href="front-end/styles.css">
+    <script src="front-end/script.js"></script>
 </head>
+
 <body>
     <header>
-        <h1>Mason Dakota Galyon</h1>
-        <h2>Cloud Engineer</h2>
+        <div class="container">
+            <h1>Mason Dakota Galyon</h1>
+            <p>Cloud Engineer</p>
+            <div id="visitor-counter">Visitors: <span id="counter">Loading...</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    
+    <main>
+        <!-- ABOUT ME -->
+        <section id="about" class="container">
+            <h2>About Me</h2>
+            <p>I don’t just work in the cloud - I'm controlling the weather, making sure systems and network
+                configurations thrive, rain or shine. As a Google Cloud Engineer, I don’t just build and maintain cloud
+                infrastructure - I transform it. I take clunky infrastructure and transform it into a cutting-edge
+                machine. Managing servers, upgrading software, and handling BigQuery are second nature. Whether it's
+                automating workflows or solving advanced technical problems, I stay ahead of the curve. My motivation?
+                Complete dominance.</p>
+        </section>
+        <!-- //ABOUT ME -->
+
+        <!-- WORK EXPERIENCE -->
+        <section id="experience" class="container">
+            <h2>Work Experience</h2>
+            <div class="grid-container">
+                <article>
+                    <h3>1099 - Automation Specialist at UpWork</h3>
+                    <p class="date">June 2023 – Present</p>
+                    <ul>
+                        <li>Optimized queries for improved performance, reducing response time</li>
+                        <li>Identified and resolved application-level bugs to improve user experience</li>
+                        <li>Developed an API enabling seamless data integration between systems</li>
+                        <li>Implemented an API for third-party service integration</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Automation Specialist at Digital Prodigee</h3>
+                    <p class="date">January 2023 – September 2024</p>
+                    <ul>
+                        <li>Created a library of reusable components for developing automation solutions</li>
+                        <li>Implemented AI-driven systems to autonomously perform complex tasks</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <!-- //WORK EXPERIENCE -->
+
+        <!-- EDUCATION -->
+        <section id="education" class="container">
+            <h2>Education & Certifications</h2>
+            <div class="grid-container-edu">
+                <div>
+                    <h3>Associate Cloud Engineer</h3>
+                    <div data-iframe-width="350" data-iframe-height="270" data-share-badge-id="86b2cd5b-dd83-4a86-b17f-36746777c56c" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+                <div>
+                    <h3>Cloud Digital Leader</h3>
+                    <div data-iframe-width="350" data-iframe-height="270" data-share-badge-id="69158181-1e28-4730-b9e7-9fc72f7c272f" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+            </div>
+        </section>
+        <!-- //EDUCATION -->
+
+        <!-- SKILLS -->
+        <section id="skills" class="container">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Google Cloud Platform (GCP)</li>
+                <li>Kubernetes</li>
+                <li>Docker</li>
+                <li>Terraform</li>
+                <li>CI/CD (Jenkins, GitLab CI)</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>BigQuery</li>
+                <li>JavaScript</li>
+                <li>Cloud NAT</li>
+                <li>Cloud VPN</li>
+                <li>Load Balancing</li>
+                <li>ComputeEngine</li>
+                <li>VPC Networking</li>
+                <li>Cloud Monitoring</li>
+                <li>IT Project Management</li>
+                <li>Identity & Access Management</li>
+            </ul>
+        </section>
+        <!-- //SKILLS -->
+
+        <!-- PROJECTS -->
+        <section id="projects" class="container">
+            <h2>Projects</h2>
+            <div class="grid-container">
+                <article>
+                    <h3>Cloud Resume Challenge - GCP</h3>
+                    <a href="https://github.com/MasonDG21/The-Cloud-Resume-Challenge-GCP" target="_blank">View On
+                        GitHub</a>
+                    <ul>
+                        <li>Built a personal resume website on GCP using Cloud Storage</li>
+                        <li>Secured site with HTTPS via Cloud Load Balancer</li>
+                        <li>Integrated visitor counter with Firestore via an API</li>
+                        <li>Managed infrastructure using Terraform for IaC</li>
+                        <li>Automated deployments with Cloud Build for CI/CD</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>NHL Stats Pipeline - GCP</h3>
+                    <a href="https://github.com/MasonDG21/NHL-Stats-Pipeline" target="_blank">View On GitHub</a>
+                    <ul>
+                        <li>Built a data analytics pipeline using Airflow on GCP</li>
+                        <li>Fetched data via public API and stored in Google Cloud Storage</li>
+                        <li>Processed data using Dataflow and loaded into BigQuery</li>
+                        <li>Created dynamic Looker Studio dashboard for real-time visualization</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <!-- //PROJECTS -->
+
+        <!-- CONTACT INFO -->
+        <section id="contact" class="container contact-section">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="column">
+                    <p><img src="gs://mason-gcs-crc/front-end/images/circle-github-512.png" alt="GitHub Icon"> <a
+                            href="https://github.com/MasonGalyon" target="_blank">GitHub</a></p>
+                    <p><img src="gs://mason-gcs-crc/front-end/images/circle-linkedin-512.png" alt="LinkedIn Icon"> <a
+                            href="https://www.linkedin.com/in/mason-galyon-63900b11b/" target="_blank">LinkedIn</a></p>
+                </div>
+                <div class="column">
+                    <p><img src="gs://mason-gcs-crc/front-end/images/circle-x-512.png" alt="Twitter / X Icon"> <a
+                            href="https://x.com/MasonGalyon" target="_blank">Twitter</a></p>
+                    <p><img src="gs://mason-gcs-crc/front-end/images/circle-mail-512.png" alt="Email Icon"> <a
+                            href="mailto:m.d.galyon21@gmail.com">Email</a></p>
+                </div>
+            </div>
+        </section>
+        <!-- //CONTACT INFO -->
+    </main>
+
+    <!-- FOOTER --> 
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mason D.G. All rights reserved.</p>
+            <p>This website was created for fun in participation with <a
+                    href="https://cloudresumechallenge.dev/docs/the-challenge/googlecloud/" target="_blank">The Cloud
+                    Resume Challenge</a></p>
+        </div>
+    </footer>
+    <!-- //FOOTER -->
 </body>
 </html>

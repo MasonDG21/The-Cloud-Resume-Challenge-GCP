@@ -90,15 +90,15 @@ ul {
 .about-section {
     background: linear-gradient(to right, #ece9e6, #ffffff);
     padding: 40px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-section .avatar {
     border-radius: 50%;
     width: 150px;
-    height:150px;
+    height: 150px;
     object-fit: cover;
     margin-bottom: 20px;
 }
@@ -109,37 +109,93 @@ ul {
     margin-top: 20px;
 }
 
-.skills-list {
+.skills-categories {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skill-category {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.skill-category ul {
     list-style-type: none;
-    columns: 2;
-    column-gap: 40px;
+    padding: 0;
+}
+
+.skill-category ul li {
+    margin: 10px 0;
+    position: relative;
+}
+
+.skill-category ul li span {
+    font-weight: bold;
+}
+
+.skill-bar {
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
 
 .contact-section {
-    background-color: #f1f1f1;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f1f1f1; /* Light gray background color for the section */
+    padding: 40px 20px; /* Padding inside the section (top/bottom: 40px, left/right: 20px) */
+    border-radius: 10px; /* Rounded corners with a radius of 10px */
+    text-align: center; /* Center-align text within the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow around the section for depth */
+}
+
+.contact-info {
+    display: flex; /* Use flexbox for layout */
+    justify-content: 20px 0 left; /* Distribute space around the columns */
+}
+
+.column {
+    flex: 1; /* Each column takes up equal space */    
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items to the start (left) */
 }
 
 .contact-info p {
-    margin: 10px 0;
+    display: flex; /* Use Flexbox for layout within each paragraph */
+    align-items: center; /* Center-align items vertically within each paragraph */
+    margin: 10px 0; /* Margin of 10px on top and bottom & 25px on left and right.*/
 }
 
 .contact-info img {
-    width: 20px;
-    vertical-align: middle;
-    margin-right: 10px;
+    width: 20px; /* Set width of images to 20px */
+    height: 20px; /* Set height of images to 20px */
+    vertical-align: middle; /* Align the middle of the image with the middle of the text */
+    margin-right: 10px; /* Margin of 10px to the right of the image */
 }
+
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
 .grid-container-edu {
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
@@ -149,7 +205,6 @@ ul {
     padding: 20px;
     border: 1px solid #FFD700;
     border-radius: 5px;
-    /* box-shadow: 0 2px 4px rgb(255, 173, 73); */
 }
 
 article {
