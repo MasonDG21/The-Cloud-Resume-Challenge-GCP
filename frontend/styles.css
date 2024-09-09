@@ -232,3 +232,22 @@ footer a:hover {
     color: #DAA520;
     text-decoration: underline;
 }
+
+.grid-container-edu {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Adjust to fit the size of the Credly boxes */
+    gap: 20px; /* Add spacing between the certifications */
+    justify-content: center; /* Center the content */
+    align-items: center; /* Vertically center-align content */
+    margin-bottom: 20px;
+}
+
+.grid-container-edu div {
+    text-align: center; /* Center-align the text */
+}
+
+@media (max-width: 768px) {
+    .grid-container-edu {
+        grid-template-columns: 1fr; /* Stack certifications vertically on smaller screens */
+    }
+}
