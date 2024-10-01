@@ -8,57 +8,7 @@ terraform {
   }
 }
 
-# ----------------------------
-# Variable Definitions
-# ----------------------------
-variable "org_id" {
-  description = "Organization ID"
-  type        = string
-}
-
-variable "billing_id" {
-  description = "Billing Account ID"
-  type        = string
-}
-
-variable "region" {
-  description = "GCP Region"
-  type        = string
-}
-
-variable "frontend_static_bucket" {
-  description = "Frontend Static Bucket Name"
-  type        = string
-}
-
-variable "domain_name" {
-  description = "Domain Name"
-  type        = string
-}
-
-variable "backend_function_name" {
-  description = "Backend Function Name"
-  type        = string
-}
-
-variable "gcsr_repo" {
-  description = "GCR Repository Name"
-  type        = string
-}
-
-variable "frontend_bucket_name" {
-  description = "Frontend Bucket Name"
-  type        = string
-}
-
-variable "backend_function_bucket_name" {
-  description = "Backend Function Bucket Name"
-  type        = string
-}
-
-# ----------------------------
 # Resource Definitions
-# ----------------------------
 
 # Create the "Cloud Resume Challenge" folder under the organization
 resource "google_folder" "crc_folder" {
@@ -81,7 +31,7 @@ resource "google_folder" "prod_folder" {
 # Create the "frontend-dev" project in the "dev" folder
 resource "google_project" "frontend_dev_project" {
   name            = "Frontend Dev Project"
-  project_id      = "mdg-crc-frontend-dev"
+  project_id      = "${var.uniform_id}-frontend-dev"
   folder_id       = google_folder.dev_folder.id
   billing_account = var.billing_id
 }
@@ -89,23 +39,26 @@ resource "google_project" "frontend_dev_project" {
 # Create the "backend-dev" project in the "dev" folder
 resource "google_project" "backend_dev_project" {
   name            = "Backend Dev Project"
-  project_id      = "mdg-crc-backend-dev"
+  project_id      = "${var.uniform_id}-backend-dev"
   folder_id       = google_folder.dev_folder.id
   billing_account = var.billing_id
 }
 
-# Create the "frontend-prod" project in the "prod" folder
-resource "google_project" "frontend_prod_project" {
-  name            = "Frontend Prod Project"
-  project_id      = "mdg-crc-frontend-prod"
+## Projects Simplified
+## next simplify folders and environment
+
+# Create the "frontend" project in the specified environment. (environment == folder for dev/prod. deploy individually and set variables according to desired env. config.)
+resource "google_project" "frontend_project" {
+  name            = "${var.uniform_id} Frontend ${var.env}"
+  project_id      = "${var.uniform_id}-frontend-${var.env}"
   folder_id       = google_folder.prod_folder.id
   billing_account = var.billing_id
 }
 
 # Create the "backend-prod" project in the "prod" folder
-resource "google_project" "backend_prod_project" {
-  name            = "Backend Prod Project"
-  project_id      = "mdg-crc-backend-prod"
+resource "google_project" "backend_project" {
+  name            = "${var.uniform_id} Backend ${var.env}"
+  project_id      = "${var.uniform_id}-backend-${var.env}"
   folder_id       = google_folder.prod_folder.id
   billing_account = var.billing_id
 }
@@ -135,7 +88,7 @@ module "frontend_dev" {
   region             = var.region
   gcs_static_bucket  = var.frontend_static_bucket
   domain_name        = var.domain_name
-  environment        = "dev"
+  environment        = var.env
 }
 
 module "backend_dev" {
@@ -156,7 +109,7 @@ module "frontend_prod" {
   region        = var.region
   bucket_name   = var.frontend_bucket_name
   domain_name   = var.domain_name
-  environment   = "prod"
+  environment   = var.env
 }
 
 module "backend_prod" {
