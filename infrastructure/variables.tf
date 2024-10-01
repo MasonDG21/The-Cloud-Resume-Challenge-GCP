@@ -1,7 +1,7 @@
-# Common variables
+# infrastructure/variables.tf
 
 variable "env" {
-  description = "The environment to deploy resources (e.g., dev or prod)"
+  description = "The environment to deploy resources (e.g., dev / staging / prod)"
   type        = string
 }
 
@@ -16,9 +16,15 @@ variable "billing_id" {
 }
 
 variable "uniform_id" {
-    description = "id prefix for my cloud resume projects and resources."
+    description = "uniform structure for identifying my resources and their associations."
     type = string
-    default = "crc-mdg"
+    default = "mdg-crc"
+}
+
+variable "uniform_name" {
+    description = "Uniform naming structure for identifying projects and their associated resources."
+    type = string
+    default = "MDG CRC"
 }
 
 variable "region" {
@@ -27,10 +33,16 @@ variable "region" {
   default     = "us-central1"
 }
 
+variable "domain_name" {
+  description = "The domain name for the website"
+  type        = string
+  default     = (var.env == "prod" ? "www.masondg-portfolio.com" : "dev.masondg-portfolio.com")
+}
+
 
 ###############################
 variable "frontend_static_bucket" {
-  description = "The name of the frontend static bucket in the dev environment"
+  description = "The name of the frontend static bucket to serve the website content."
   type        = string
   default     = "${var.env}-${var.uniform_id}-frontend-static-bucket"
 }
@@ -53,22 +65,4 @@ variable "backend_function_bucket_name" {
 variable "gcsr_repo" {
   description = "GCR Repository Name"
   type        = string
-}
-
-###############################
-# Development Env. Domain
-
-variable "dev_domain_name" {
-  description = "The domain name for the website in the development environment."
-  type        = string
-  default     = "dev.masondg-portfolio.com"
-}
-
-###############################
-# Production Env. Domain
-variable "domain_name" {
-  description = "The domain name for the live static website in production."
-  type        = string
-  default     = "masondg-portfolio.com"
-    
 }
